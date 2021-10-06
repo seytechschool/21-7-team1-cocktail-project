@@ -1,0 +1,42 @@
+body {
+  height: 100vh;
+  background-color: lightblue;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.wrapper {
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-2 {
+  margin: 20px auto;
+  padding: 40px;
+}
+h1 {
+  padding: 15px;
+  margin: 10px auto;
+  font-size: 50px;
+}
+.cocktail-search-name {
+  width: 250px;
+  height: 30px;
+}
+.search-button {
+  width: 150px;
+  height: 30px;
+  background-color: limegreen;
+}
+.cocktail-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.cocktail-item {
+  width: 85%;
+  background-color: pink;
+  margin: 25px;
+  text-align: center;
+}
+.new-wrapper {
+  border: 2px solid red;
+}
