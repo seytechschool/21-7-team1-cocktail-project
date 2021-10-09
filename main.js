@@ -55,15 +55,7 @@ function addEvent() {
   });
 }
 
-// 3. Opening coctail details on new page
-// const coctailDiv = document.querySelector(".cocktail-item");
-// coctailDiv.addEventListener("click", function () {
-//   console.log("test");
-// });
-
 function openCoctail(item) {
-  //   console.log(item);
-  //   ${event.path[0].currentSrc}
   const coctail = `HELLO`;
   //   `<section class="single-drink">
   //     <img src="https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg" class="drink-img" alt="">
@@ -76,9 +68,5 @@ function openCoctail(item) {
   //   </section>`;
 
   setCoctailName();
-  //   const container = document.querySelector(".container");
-  //   console.log(container);
-  //   container.innerHTML = coctail;
-  // window.location = `drink.html?img=${}&name${}&`
   window.open("drink.html", "_blank");
 }
