@@ -4,14 +4,14 @@ import { setCoctailName } from "./drink.js";
 ///////////////////////////////////////////////////////////////
 ////////////////// DEVELOPE BELOW THIS LINE ///////////////////
 ///////////////////////////////////////////////////////////////
-const wrapper = document.querySelector(".cocktail-wrapper");
-// const searchButton = document.querySelector(".search-button");
+const coctailWrapper = document.querySelector(".cocktail-wrapper");
+const oopsWrapper = document.querySelector(".oops-wrapper");
 
 function renderData(cocktails) {
-  wrapper.innerHTML = "";
+  coctailWrapper.innerHTML = "";
   for (let element of cocktails) {
     const el = `<div class="cocktail-item"><img src="${element.strDrinkThumb}" style="width: 100%;"><p class="text">${element.strDrink}<span class="categoryText">${element.strCategory}</span></p></div>`;
-    wrapper.innerHTML += el;
+    coctailWrapper.innerHTML += el;
   }
   addEvent();
 }
@@ -42,7 +42,13 @@ function onClick() {
     const char = searchedCocktailName.toLowerCase();
     return str.includes(char);
   });
-  renderData(newArr);
+  if (newArr.length === 0) {
+    oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${inputField.value}"</strong></p><p>Keep calm and search again. We have so many other product that you will like!</p></div>`;
+    coctailWrapper.innerHTML = "";
+  } else {
+    renderData(newArr);
+    oopsWrapper.innerHTML = "";
+  }
 }
 
 function addEvent() {
