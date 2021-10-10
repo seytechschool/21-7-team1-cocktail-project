@@ -10,7 +10,7 @@ const wrapper = document.querySelector(".cocktail-wrapper");
 function renderData(cocktails) {
   wrapper.innerHTML = "";
   for (let element of cocktails) {
-    const el = `<div class="cocktail-item"><img src="${element.strDrinkThumb}" style="width: 100%;"><p class="text">${element.strDrink}</p></div>`;
+    const el = `<div class="cocktail-item"><img src="${element.strDrinkThumb}" style="width: 100%;"><p class="text">${element.strDrink}<span class="categoryText">${element.strCategory}</span></p></div>`;
     wrapper.innerHTML += el;
   }
   addEvent();
