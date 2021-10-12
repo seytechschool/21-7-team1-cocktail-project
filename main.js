@@ -14,9 +14,9 @@ function getData(url) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      cocktailsData = data.drinks;
-    })
-    .then(() => renderData(cocktailsData));
+      cocktailsData = data.drinks === null ? [] : data.drinks;
+      renderData(cocktailsData);
+    });
 }
 getData(URL);
 
@@ -33,7 +33,13 @@ function renderData(cocktails) {
 
 // 2. Working with event listeners, higher order functions
 let inputField = document.querySelector(".cocktail-search-name");
-inputField.addEventListener("input", () => onChange());
+inputField.addEventListener("input", () => {
+  cocktailsData = [];
+  getData(URL + inputField.value);
+  setTimeout(() => {
+    onChange();
+  }, 300);
+});
 
 // option
 function onChange() {
