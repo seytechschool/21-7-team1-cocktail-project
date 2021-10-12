@@ -41,7 +41,23 @@ h1 {
   font-size: 20px;
   position: relative;
 }
-.categoryText {
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.categoryType {
+  font-size: 12px;
+  font-weight: 740;
+  color: black;
+  padding: 8px;
+  background-color: var(--browncolor);
+  position: absolute;
+  right: 0;
+  border-top-left-radius: 5px;
+  top: 5px;
+}
+.alcoholicType {
   font-size: 12px;
   position: absolute;
   right: 30px;
@@ -78,14 +94,15 @@ h1 {
   font-weight: bold;
   box-shadow: 5px 3px 10px grey;
   border-radius: 5px;
-  overflow: hidden;
 }
 .cocktail-item img {
   transition: all 0.3s;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   max-height: 250px;
   object-fit: cover;
 }
+
 .cocktail-item:hover img {
   transform: scale(1.1);
 }

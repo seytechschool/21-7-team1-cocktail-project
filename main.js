@@ -25,7 +25,7 @@ function renderData(cocktails) {
   coctailWrapper.innerHTML = "";
   for (let element of cocktails) {
     console.log(element + "*****");
-    const el = `<div class="cocktail-item"><img src="${element.strDrinkThumb}" style="width: 100%;"><p class="nameCoctail">${element.strDrink}<span class="categoryText">${element.strCategory}</span></p></div>`;
+    const el = `<div class="cocktail-item"><div class="imgWrapper"><img src="${element.strDrinkThumb}"><p class="categoryType">${element.strCategory}</p></div><p class="nameCoctail">${element.strDrink}<span class="alcoholicType">${element.strAlcoholic}</span></p></div>`;
     coctailWrapper.innerHTML += el;
   }
   addEvent();
@@ -36,26 +36,26 @@ let inputField = document.querySelector(".cocktail-search-name");
 inputField.addEventListener("input", () => {
   cocktailsData = [];
   getData(URL + inputField.value);
-  setTimeout(() => {
-    onChange();
-  }, 300);
+  onChange();
 });
 
 // option
 function onChange() {
-  const newArr = cocktailsData.filter((item) => {
-    const searchedCocktailName = inputField.value.toLowerCase();
-    const str = item.strDrink.toLowerCase();
-    const char = searchedCocktailName.toLowerCase();
-    return str.includes(char);
-  });
-  if (newArr.length === 0) {
-    oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${inputField.value}"</strong></p><p>Keep calm and search again. We have so many other product that you will like!</p></div>`;
-    coctailWrapper.innerHTML = "";
-  } else {
-    renderData(newArr);
-    oopsWrapper.innerHTML = "";
-  }
+  setTimeout(() => {
+    const newArr = cocktailsData.filter((item) => {
+      const searchedCocktailName = inputField.value.toLowerCase();
+      const str = item.strDrink.toLowerCase();
+      const char = searchedCocktailName.toLowerCase();
+      return str.includes(char);
+    });
+    if (newArr.length === 0) {
+      oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${inputField.value}"</strong></p><p>Keep calm and search again. We have so many other product that you will like!</p></div>`;
+      coctailWrapper.innerHTML = "";
+    } else {
+      renderData(newArr);
+    }
+  }, 500);
+  oopsWrapper.innerHTML = "";
 }
 
 function addEvent() {
