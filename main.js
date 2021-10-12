@@ -10,32 +10,19 @@ const oopsWrapper = document.querySelector(".oops-wrapper");
 function renderData(cocktails) {
   coctailWrapper.innerHTML = "";
   for (let element of cocktails) {
-    const el = `<div class="cocktail-item"><img src="${element.strDrinkThumb}" style="width: 100%;"><p class="text">${element.strDrink}<span class="categoryText">${element.strCategory}</span></p></div>`;
+    const el = `<div class="cocktail-item"><img src="${element.strDrinkThumb}" style="width: 100%;"><p class="nameCoctail">${element.strDrink}<span class="categoryText">${element.strCategory}</span></p></div>`;
     coctailWrapper.innerHTML += el;
   }
   addEvent();
 }
-
 renderData(cocktails);
 
 // 2. Working with event listeners, higher order functions
 let inputField = document.querySelector(".cocktail-search-name");
-inputField.addEventListener("input", (event) => onClick(event));
+inputField.addEventListener("input", () => onChange());
 
-// option1
-// function onClick(event) {
-//   let newArr = [];
-//   const searchedCocktailName = inputField.value.toLowerCase();
-//   for (let item of cocktails) {
-//     if (item.strDrink.toLowerCase().includes(searchedCocktailName)) {
-//       newArr.push(item);
-//     }
-//   }
-//   renderData(newArr);
-// }
-
-// option2
-function onClick() {
+// option
+function onChange() {
   const newArr = cocktails.filter((item) => {
     const searchedCocktailName = inputField.value.toLowerCase();
     const str = item.strDrink.toLowerCase();
@@ -53,16 +40,12 @@ function onClick() {
 
 function addEvent() {
   document.querySelectorAll(".cocktail-item").forEach((item) => {
-    item.addEventListener("click", () => openCoctail(item));
-    //     {
-    //       //handle click
-    //       console.log("test");
-    //     });
+    item.addEventListener("click", () => openCoctail());
   });
 }
 
-function openCoctail(item) {
-  const coctail = `HELLO`;
+function openCoctail() {
+  console.log("Test");
   //   `<section class="single-drink">
   //     <img src="https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg" class="drink-img" alt="">
   //     <article class="drink-info">
@@ -73,6 +56,6 @@ function openCoctail(item) {
   //     </article>
   //   </section>`;
 
-  setCoctailName();
-  window.open("drink.html", "_blank");
+  // setCoctailName();
+  window.open("drink.html", "_self");
 }
