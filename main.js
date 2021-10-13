@@ -7,7 +7,6 @@ const URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 const coctailWrapper = document.querySelector(".cocktail-wrapper");
 const oopsWrapper = document.querySelector(".oops-wrapper");
 let cocktailsData; // before it was cocktails
-
 export function getData(url) {
   fetch(url)
     .then((response) => response.json())
@@ -35,19 +34,25 @@ inputField.addEventListener("input", () => {
   onChange();
 });
 
-function func(arg) {
-  let i = 0;
+const btn = document.querySelectorAll("button");
+let sort = [];
+for (let button of btn) {
+  button.addEventListener("click", function (event) {
+    if (event.target.outerText === "All") {
+      sort = cocktailsData;
+    } else {
+      sort = cocktailsData.filter(
+        (item) => item.strCategory === event.target.outerText
+      );
+    }
+    renderData(sort);
+    sort = [];
+  });
 }
 
 // option
 function onChange() {
   setTimeout(() => {
-    // const newArr = cocktailsData.filter((item) => {
-    //   const searchedCocktailName = inputField.value.toLowerCase();
-    //   const str = item.strDrink.toLowerCase();
-    //   const char = searchedCocktailName.toLowerCase();
-    //   return str.includes(char);
-    // });
     if (cocktailsData.length === 0) {
       oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${inputField.value}"</strong></p><p>Keep calm and search again. We have so many other product that you will like!</p></div>`;
       coctailWrapper.innerHTML = "";
