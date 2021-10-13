@@ -1,5 +1,4 @@
 import { cocktails } from "./data.js"; // this is your data
-// import { setCoctailName } from "./drink.js";
 
 ///////////////////////////////////////////////////////////////
 ////////////////// DEVELOPE BELOW THIS LINE ///////////////////
@@ -7,12 +6,11 @@ import { cocktails } from "./data.js"; // this is your data
 const URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 const coctailWrapper = document.querySelector(".cocktail-wrapper");
 const oopsWrapper = document.querySelector(".oops-wrapper");
-let cocktailsData;
+let cocktailsData; // before it was cocktails
 
-function getData(url) {
-  console.log(cocktails);
+export function getData(url) {
   fetch(url)
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((data) => {
       cocktailsData = data.drinks === null ? [] : data.drinks;
       renderData(cocktailsData);
@@ -21,11 +19,9 @@ function getData(url) {
 getData(URL);
 
 function renderData(cocktails) {
-  console.log(cocktails);
   coctailWrapper.innerHTML = "";
   for (let element of cocktails) {
-    console.log(element + "*****");
-    const el = `<div class="cocktail-item"><div class="imgWrapper"><img src="${element.strDrinkThumb}"><p class="categoryType">${element.strCategory}</p></div><p class="nameCoctail">${element.strDrink}<span class="alcoholicType">${element.strAlcoholic}</span></p></div>`;
+    const el = `<div id="${element.idDrink}" class="cocktail-item"><div class="imgWrapper"><img src="${element.strDrinkThumb}"><p class="categoryType">${element.strCategory}</p></div><p class="nameCoctail">${element.strDrink}<span class="alcoholicType">${element.strAlcoholic}</span></p></div>`;
     coctailWrapper.innerHTML += el;
   }
   addEvent();
@@ -39,20 +35,24 @@ inputField.addEventListener("input", () => {
   onChange();
 });
 
+function func(arg) {
+  let i = 0;
+}
+
 // option
 function onChange() {
   setTimeout(() => {
-    const newArr = cocktailsData.filter((item) => {
-      const searchedCocktailName = inputField.value.toLowerCase();
-      const str = item.strDrink.toLowerCase();
-      const char = searchedCocktailName.toLowerCase();
-      return str.includes(char);
-    });
-    if (newArr.length === 0) {
+    // const newArr = cocktailsData.filter((item) => {
+    //   const searchedCocktailName = inputField.value.toLowerCase();
+    //   const str = item.strDrink.toLowerCase();
+    //   const char = searchedCocktailName.toLowerCase();
+    //   return str.includes(char);
+    // });
+    if (cocktailsData.length === 0) {
       oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${inputField.value}"</strong></p><p>Keep calm and search again. We have so many other product that you will like!</p></div>`;
       coctailWrapper.innerHTML = "";
     } else {
-      renderData(newArr);
+      renderData(cocktailsData);
     }
   }, 500);
   oopsWrapper.innerHTML = "";
@@ -60,22 +60,11 @@ function onChange() {
 
 function addEvent() {
   document.querySelectorAll(".cocktail-item").forEach((item) => {
-    item.addEventListener("click", () => openCoctail());
+    item.addEventListener("click", () => openCoctail(item));
   });
 }
 
-function openCoctail() {
-  console.log();
-
-  var winPrint = window.open("drink.html", "_self");
-  winPrint.document
-    .write(`<title>Print Report</title><section class="single-drink">
-  <img src="${element.strDrinkThumb}" class="drink-img" alt="${element.strDrink}"">
-  <article class="drink-info">
-    <h2 class="drink-name">${element.strDrink}</h2>
-    <p class="drink-desc">Layered in a shot glass.</p>
-    <ul class="drink-ingredients"><li><i class="far fa-check-square"></i>Amaretto</li><li><i class="far fa-check-square"></i>Baileys irish cream</li><li><i class="far fa-check-square"></i>Cognac</li></ul>
-    <a href="index.html" class="btn">all cocktails</a>
-  </article>
-</section>`);
+function openCoctail(element) {
+  localStorage.setItem("id", element.id);
+  window.open("drink.html", "_self");
 }
