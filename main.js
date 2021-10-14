@@ -8,7 +8,22 @@ const coctailWrapper = document.querySelector(".cocktail-wrapper");
 const oopsWrapper = document.querySelector(".oops-wrapper");
 let cocktailsData; // before it was cocktails
 
-export function getData(url) {
+// window.addEventListener("load", function () {
+//   const loader = document.querySelector(".loading");
+//   // loader.className += " loading";
+//   console.log(loader);
+// })
+ window.onload = function(){
+  //hide the preloader
+  document.querySelector('.filters-button-group').style.display = 'none';
+  setTimeout(function(){ 
+    document.querySelector(".loading").style.display = "none"; 
+    document.querySelector('.filters-button-group').style.display = 'block';
+    getData(URL);
+  }, 2000);
+}
+
+function getData(url) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -16,7 +31,7 @@ export function getData(url) {
       renderData(cocktailsData);
     });
 }
-getData(URL);
+
 
 function renderData(cocktails) {
   coctailWrapper.innerHTML = "";

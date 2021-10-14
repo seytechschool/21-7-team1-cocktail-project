@@ -1,3 +1,18 @@
+window.onload = function(){
+  //hide the preloader
+  document.querySelector('.filters-button-group').style.display = 'none';
+  setTimeout(function(){ 
+    document.querySelector(".loading").style.display = "none"; 
+    document.querySelector('.filters-button-group').style.display = 'block';
+    getData(URL);
+  }, 2000);
+}
+
+// window.onload = function(){
+//   //hide the preloader
+//   document.querySelector(".loading").style.display = "none";
+// }
+
 const cocktailWrapper = document.querySelector(".container");
 
 const itemURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
@@ -31,5 +46,6 @@ function renderData(cocktail) {
   </div>`;
   cocktailWrapper.innerHTML = el;
 }
+
 
 // localStorage.removeItem("id");
