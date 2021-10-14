@@ -7,6 +7,7 @@ const URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 const coctailWrapper = document.querySelector(".cocktail-wrapper");
 const oopsWrapper = document.querySelector(".oops-wrapper");
 let cocktailsData; // before it was cocktails
+
 export function getData(url) {
   fetch(url)
     .then((response) => response.json())
@@ -38,16 +39,31 @@ const btn = document.querySelectorAll("button");
 let sort = [];
 for (let button of btn) {
   button.addEventListener("click", function (event) {
-    if (event.target.outerText === "All") {
+    // let current = document.getElementsByClassName("active");
+    // current[0].className = current[0].className.replace(" active", "");
+    // this.className += " active";
+    btn.forEach(el => el.classList.remove('active'))
+    button.classList.add('active')
+
+    if (event.target.outerText === "ALL") {
       sort = cocktailsData;
     } else {
       sort = cocktailsData.filter(
-        (item) => item.strCategory === event.target.outerText
+        (item) => item.strCategory.toUpperCase() === event.target.outerText
       );
     }
-    renderData(sort);
+    if(sort.length === 0){
+      oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found in this category</h2></div>`;
+      coctailWrapper.innerHTML = "";
+
+    } else {
+      renderData(sort);
+      oopsWrapper.innerHTML = "";
+    }
     sort = [];
+
   });
+
 }
 
 // option

@@ -156,3 +156,36 @@ h1 {
 .form input:focus + label {
   color: var(--browncolor);
 }
+
+ul {
+  display: flex;
+  list-style: none;
+  border-bottom: none;
+  margin-bottom:60px;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #7c7770;
+}
+li {
+  border-bottom: 4px solid #eaeaea;
+    list-style: none;
+    display: inline-block;
+}
+button {
+  border: none;
+  font-size: 15px;
+  color:#8b887d;
+  height: 50px;
+  text-align: center;
+  padding: 9px;
+  background-color: var(--bgcolor);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+button:hover, .active {
+  background-color: rgb(56, 55, 55);
+  color: white;
+}
