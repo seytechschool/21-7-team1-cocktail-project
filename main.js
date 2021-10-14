@@ -13,15 +13,15 @@ let cocktailsData; // before it was cocktails
 //   // loader.className += " loading";
 //   console.log(loader);
 // })
- window.onload = function(){
+window.onload = function () {
   //hide the preloader
-  document.querySelector('.filters-button-group').style.display = 'none';
-  setTimeout(function(){ 
-    document.querySelector(".loading").style.display = "none"; 
-    document.querySelector('.filters-button-group').style.display = 'block';
+  document.querySelector(".filters-button-group").style.display = "none";
+  setTimeout(function () {
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".filters-button-group").style.display = "block";
     getData(URL);
   }, 2000);
-}
+};
 
 function getData(url) {
   fetch(url)
@@ -31,7 +31,6 @@ function getData(url) {
       renderData(cocktailsData);
     });
 }
-
 
 function renderData(cocktails) {
   coctailWrapper.innerHTML = "";
@@ -57,8 +56,8 @@ for (let button of btn) {
     // let current = document.getElementsByClassName("active");
     // current[0].className = current[0].className.replace(" active", "");
     // this.className += " active";
-    btn.forEach(el => el.classList.remove('active'))
-    button.classList.add('active')
+    btn.forEach((el) => el.classList.remove("active"));
+    button.classList.add("active");
 
     if (event.target.outerText === "ALL") {
       sort = cocktailsData;
@@ -67,18 +66,15 @@ for (let button of btn) {
         (item) => item.strCategory.toUpperCase() === event.target.outerText
       );
     }
-    if(sort.length === 0){
+    if (sort.length === 0) {
       oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found in this category</h2></div>`;
       coctailWrapper.innerHTML = "";
-
     } else {
       renderData(sort);
       oopsWrapper.innerHTML = "";
     }
     sort = [];
-
   });
-
 }
 
 // option
