@@ -1,8 +1,26 @@
+.hide-loading {
+  display: none;
+}
+
+.loading {
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-grey-10);
+  padding-top: 5rem;
+  display: block;
+}
 /* Alty */
 body {
   box-sizing: border-box;
   margin: 10px;
 }
+
 .container {
   width: 100%;
   color: #C7A17A;
@@ -62,7 +80,3 @@ a.link-to-index {
  }
  /* Alty */
  
-
- 
-  
-
