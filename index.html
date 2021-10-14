@@ -1,67 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coctail Bar</title>
+    <title>Cocktail Bar</title>
     <link rel="stylesheet" href="./styles.css" />
-  </head>
+</head>
 
-  <body>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+
+                <ul class="nav__list">
+                    <li class="nav__item nav__item_mobile_visible">
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="#">About</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="#">Gallery</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="#">
+                            <img class="bar-logo" src="images/logo.png" alt="logo">
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="#">Request a call</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a class="nav__link" href="#">Careers</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div class="wrapper-2">
-      <h1>Team One's Bar</h1>
-      <div class="form">
-        <input
-          type="text"
-          id="search-input"
-          class="cocktail-search-name"
-          autocomplete="off"
-          required
-        />
-        <label for="search-input">Search</label>
-      </div>
+        <h1>Team One's Galaxy Bar</h1>
+        <div class="form">
+            <input type="text" id="search-input" class="cocktail-search-name" autocomplete="off" required />
+            <label for="search-input">Search Cocktail Drinks</label>
+        </div>
     </div>
     <div class="wrapper">
-      <article class="loading .hide-loading">
-        <img src="./images/giphy.gif" alt="loadingPic" />
-      </article>
-      <ul class="filters-button-group">
-        <li>
-          <button class="button all active">All</button>
-        </li>
-        <li>
-          <button class="button ordinary-drink">Ordinary Drink</button>
-        </li>
-        <li>
-          <button class="button cocktail">Cocktail</button>
-        </li>
-        <li>
-          <button class="button milk">Milk / Float / Shake</button>
-        </li>
-        <li>
-          <button class="button cocoa">Cocoa</button>
-        </li>
-        <li>
-          <button class="button shot">Shot</button>
-        </li>
-        <li>
-          <button class="button coffee">Coffee / Tea</button>
-        </li>
-        <li>
-          <button class="button homeMadeLiqueur">Homemade Liqueur</button>
-        </li>
-        <li>
-          <button class="button punch">Punch / Party Drink</button>
-        </li>
-        <li>
-          <button class="button beer">Beer</button>
-        </li>
-      </ul>
+        <article class="loading .hide-loading">
+            <img src="./images/giphy.gif" alt="loadingPic" />
+        </article>
+        <ul class="filters-button-group">
+            <li>
+                <button class="button all active">All</button>
+            </li>
+            <li>
+                <button class="button ordinary-drink">Ordinary Drink</button>
+            </li>
+            <li>
+                <button class="button cocktail">Cocktail</button>
+            </li>
+            <li>
+                <button class="button milk">Milk / Float / Shake</button>
+            </li>
+            <li>
+                <button class="button cocoa">Cocoa</button>
+            </li>
+            <li>
+                <button class="button shot">Shot</button>
+            </li>
+            <li>
+                <button class="button coffee">Coffee / Tea</button>
+            </li>
+            <li>
+                <button class="button homeMadeLiqueur">Homemade Liqueur</button>
+            </li>
+            <li>
+                <button class="button punch">Punch / Party Drink</button>
+            </li>
+            <li>
+                <button class="button beer">Beer</button>
+            </li>
+        </ul>
 
-      <div class="cocktail-wrapper"></div>
-      <div class="oops-wrapper"></div>
+        <div class="cocktail-wrapper"></div>
+        <div class="oops-wrapper"></div>
     </div>
-  </body>
-  <script type="module" src="main.js"></script>
+</body>
+<script type="module" src="main.js"></script>
+
 </html>
