@@ -50,19 +50,40 @@ inputField.addEventListener("input", () => {
   onChange();
 });
 
-function func(arg) {
-  let i = 0;
+const btn = document.querySelectorAll("button");
+let sort = [];
+for (let button of btn) {
+  button.addEventListener("click", function (event) {
+    // let current = document.getElementsByClassName("active");
+    // current[0].className = current[0].className.replace(" active", "");
+    // this.className += " active";
+    btn.forEach(el => el.classList.remove('active'))
+    button.classList.add('active')
+
+    if (event.target.outerText === "ALL") {
+      sort = cocktailsData;
+    } else {
+      sort = cocktailsData.filter(
+        (item) => item.strCategory.toUpperCase() === event.target.outerText
+      );
+    }
+    if(sort.length === 0){
+      oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found in this category</h2></div>`;
+      coctailWrapper.innerHTML = "";
+
+    } else {
+      renderData(sort);
+      oopsWrapper.innerHTML = "";
+    }
+    sort = [];
+
+  });
+
 }
 
 // option
 function onChange() {
   setTimeout(() => {
-    // const newArr = cocktailsData.filter((item) => {
-    //   const searchedCocktailName = inputField.value.toLowerCase();
-    //   const str = item.strDrink.toLowerCase();
-    //   const char = searchedCocktailName.toLowerCase();
-    //   return str.includes(char);
-    // });
     if (cocktailsData.length === 0) {
       oopsWrapper.innerHTML = `<div class="nothingFound"><img src="images/not-found.png"><h2>Nothing found</h2><p><strong>Sorry, we couldn't find any results matching "${inputField.value}"</strong></p><p>Keep calm and search again. We have so many other product that you will like!</p></div>`;
       coctailWrapper.innerHTML = "";
