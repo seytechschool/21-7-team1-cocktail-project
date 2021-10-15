@@ -20,13 +20,13 @@ body {
 
 .container {
   width: 100%;
-  color: #c7a17a;
+  /* color: #c7a17a; */
   opacity: 0.9;
   margin: auto;
-  background-color: rgb(250, 251, 253);
+  /* background-color: rgb(250, 251, 253); */
   display: flex;
 }
-
+/*
 .drink-image {
   width: 70%;
   height: 300px;
@@ -76,6 +76,6 @@ a.link-to-index {
   border-radius: 8px;
   width: 120px;
   text-align: center;
-}
+} */
 
 /* Alty */
