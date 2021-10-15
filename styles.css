@@ -20,6 +20,10 @@ body {
     margin: 0 auto;
 }
 
+.nav__item {
+    border-bottom: none;
+}
+
 .nav__list {
     display: flex;
     justify-content: space-between;
@@ -30,7 +34,8 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     line-height: 18px;
-    color: #fff;
+    color: rgb(215 146 223);
+    text-decoration: none;
     -webkit-transition: color .4s ease-in-out, -webkit-text-decoration;
     transition: color .4s ease-in-out, -webkit-text-decoration;
     transition: text-decoration, color .4s ease-in-out;
