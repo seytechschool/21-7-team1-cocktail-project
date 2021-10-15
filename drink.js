@@ -1,24 +1,15 @@
-window.onload = function(){
-  //hide the preloader
-  document.querySelector('.filters-button-group').style.display = 'none';
-  setTimeout(function(){ 
-    document.querySelector(".loading").style.display = "none"; 
-    document.querySelector('.filters-button-group').style.display = 'block';
-    getData(URL);
-  }, 2000);
-}
-
-// window.onload = function(){
-//   //hide the preloader
-//   document.querySelector(".loading").style.display = "none";
-// }
-
 const cocktailWrapper = document.querySelector(".container");
+const loading = document.querySelector("#loading");
 
 const itemURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 const id = localStorage.getItem("id");
-getData(itemURL + id);
 let cocktailDetails;
+
+loading.className = "loading";
+setTimeout(() => {
+  loading.className = "hide-loading";
+  getData(itemURL + id);
+}, 2000);
 
 function getData(url) {
   fetch(url)
@@ -37,15 +28,13 @@ function renderData(cocktail) {
       arr.push(item["strIngredient" + i]);
     }
   }
-  console.log(arr);
   arr.forEach(function (ingredient) {
     li += `<li class="ingredientLi">${ingredient}</li>`;
   });
 
-  const el = `<div class="left-side"><img class="drink-image" src="${item.strDrinkThumb}" alt="" /></div><div class="right-side"><h3 class="drink-name">${item.strDrink}</h3><p class="drink-receipt">${item.strInstructions}</p><ul class="drink-composition">${li}</ul><a class="link-to-index" href="index.html">All Coctails</a>
+  const el = `<div class="left-side"><img class="drink-image" src="${item.strDrinkThumb}" alt="" /></div><div class="right-side"><h3 class="drink-name">${item.strDrink}</h3><p class="drink-receipt">${item.strInstructions}</p><ul class="drink-composition">${li}</ul><a class="link-to-index" href="index.html#search">All Coctails</a>
   </div>`;
   cocktailWrapper.innerHTML = el;
 }
-
 
 // localStorage.removeItem("id");

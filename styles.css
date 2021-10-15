@@ -1,282 +1,275 @@
 :root {
-    --bgcolor: #585450;
-    --browncolor: #c7a17a;
+  --bgcolor: #585450;
+  --browncolor: #c7a17a;
 }
 
 body {
-    height: 100vh;
-    background-color: var(--bgcolor);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    margin: 0 auto;
+  height: 100vh;
+  background-color: var(--bgcolor);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0 auto;
 }
-
+.loaderMain {
+  height: 100vh;
+  background-color: rgb(14, 4, 11);
+  display: flex;
+  justify-content: center;
+  vertical-align: auto;
+}
 .header {
-    min-height: 1080px;
-    background: url("images/bar-bg.gif") center center/cover no-repeat;
+  min-height: 1080px;
+  background: url("images/bar-bg.gif") center center/cover no-repeat;
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav__item {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .nav__list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav__link {
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 18px;
-    color: rgb(215 146 223);
-    text-decoration: none;
-    -webkit-transition: color .4s ease-in-out, -webkit-text-decoration;
-    transition: color .4s ease-in-out, -webkit-text-decoration;
-    transition: text-decoration, color .4s ease-in-out;
-    transition: text-decoration, color .4s ease-in-out, -webkit-text-decoration;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 18px;
+  color: rgb(215 146 223);
+  text-decoration: none;
+  -webkit-transition: color 0.4s ease-in-out, -webkit-text-decoration;
+  transition: color 0.4s ease-in-out, -webkit-text-decoration;
+  transition: text-decoration, color 0.4s ease-in-out;
+  transition: text-decoration, color 0.4s ease-in-out, -webkit-text-decoration;
 }
 
 .nav__link:hover {
-    text-decoration: underline;
-    color: rgba(178, 180, 32, 0.979);
-    -webkit-transition: color .4s ease-in-out, -webkit-text-decoration;
-    transition: color .4s ease-in-out, -webkit-text-decoration;
-    transition: text-decoration, color .4s ease-in-out;
-    transition: text-decoration, color .4s ease-in-out, -webkit-text-decoration;
+  text-decoration: underline;
+  color: rgba(178, 180, 32, 0.979);
+  -webkit-transition: color 0.4s ease-in-out, -webkit-text-decoration;
+  transition: color 0.4s ease-in-out, -webkit-text-decoration;
+  transition: text-decoration, color 0.4s ease-in-out;
+  transition: text-decoration, color 0.4s ease-in-out, -webkit-text-decoration;
 }
 
 .bar-logo {
-    width: 400px;
-    max-width: 400px;
-    height: auto;
+  width: 400px;
+  max-width: 400px;
+  height: auto;
 }
 
 .wrapper {
-    height: 100vh;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper-2 {
-    text-align: center;
-    margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 h1 {
-    padding: 15px;
-    margin: 10px auto;
-    margin-top: 40px;
-    font-family: 'Ubuntu',
-        sans-serif;
-    font-size: 50px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    letter-spacing: 5px;
-    text-shadow: 3px 3px 20px #ff99cc,
-        -2px 1px 30px #ff99cc;
+  padding: 15px;
+  margin: 10px auto;
+  margin-top: 40px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 5px;
+  text-shadow: 3px 3px 20px #ff99cc, -2px 1px 30px #ff99cc;
 }
 
 .nameCoctail {
-    text-align: left;
-    padding-left: 10%;
-    font-size: 20px;
-    position: relative;
+  text-align: left;
+  padding-left: 10%;
+  font-size: 20px;
+  position: relative;
 }
 
 .imgWrapper {
-    position: relative;
-    overflow: hidden;
-    border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .categoryType {
-    font-size: 12px;
-    font-weight: 740;
-    color: black;
-    padding: 8px;
-    background-color: var(--browncolor);
-    position: absolute;
-    right: 0;
-    border-top-left-radius: 5px;
-    top: 5px;
+  font-size: 12px;
+  font-weight: 740;
+  color: black;
+  padding: 8px;
+  background-color: var(--browncolor);
+  position: absolute;
+  right: 0;
+  border-top-left-radius: 5px;
+  top: 5px;
 }
 
 .alcoholicType {
-    font-size: 12px;
-    position: absolute;
-    right: 30px;
-    top: 5px;
+  font-size: 12px;
+  position: absolute;
+  right: 30px;
+  top: 5px;
 }
 
 .nothingFound {
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
-    font-size: 30px;
-    color: var(--browncolor);
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+  color: black;
 }
 
 .nothingFound img {
-    margin: auto;
-    display: block;
-    width: 400px;
-    margin-bottom: 20px;
+  margin: auto;
+  display: block;
+  width: 300px;
+  margin-bottom: 20px;
 }
 
 .nothingFound p {
-    font-size: 20px;
-    color: black;
+  font-size: 20px;
+  color: var(--browncolor);
 }
 
 .cocktail-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .cocktail-item {
-    width: 85%;
-    background-color: white;
-    box-sizing: border-box;
-    margin: 25px;
-    text-align: center;
-    font-weight: bold;
-    box-shadow: 5px 3px 10px grey;
-    border-radius: 5px;
+  width: 85%;
+  background-color: white;
+  box-sizing: border-box;
+  margin: 25px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 5px 3px 10px grey;
+  border-radius: 5px;
 }
 
 .cocktail-item img {
-    transition: all 0.3s;
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-    object-fit: cover;
-    cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .cocktail-item:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .cocktail-item:hover {
-    color: var(--browncolor);
+  color: var(--browncolor);
 }
 
 *,
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 .form {
-    width: 30%;
-    margin: 0 auto;
-    font-family: sans-serif;
-    position: relative;
-    border-radius: 5px;
+  width: 30%;
+  margin: 15px auto;
+  font-family: sans-serif;
+  position: relative;
+  border-radius: 5px;
 }
 
 .form input {
-    display: block;
-    width: 100%;
-    height: 40px;
-    border: solid 3px #ccc;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    padding-left: 15px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: solid 3px #ccc;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  padding-left: 15px;
 }
 
 .form input:focus {
-    border-color: var(--browncolor);
+  border-color: var(--browncolor);
 }
 
 .form label {
-    width: 95%;
-    position: absolute;
-    cursor: text;
-    z-index: 2;
-    top: 17px;
-    left: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 0 10px;
-    color: #999;
-    transition: all 0.3s ease;
+  width: 95%;
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 17px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 10px;
+  color: #999;
+  transition: all 0.3s ease;
 }
 
-.form input:focus+label,
-.form input:valid+label {
-    font-size: 15px;
-    top: -20px;
+.form input:focus + label,
+.form input:valid + label {
+  font-size: 15px;
+  top: -20px;
 }
 
-.form input:focus+label {
-    color: var(--browncolor);
-}
-
-.hide-loading {
-    display: none;
+.form input:focus + label {
+  color: var(--browncolor);
 }
 
 .loading {
-    /* min-height: 100vh; */
-    display: grid;
-    justify-content: center;
-    position: absolute;
-    top: 40%;
-    left: 43%;
-    /* width: 100px; */
-    /* height: 100%; */
-    background: var(--clr-grey-10);
-    padding-top: 5rem;
-    display: block;
+  display: flex;
+  align-items: center;
+  margin: auto;
 }
 
 .loading img {
-    width: 200px;
+  width: 300px;
+  height: 300px;
 }
 
 ul {
-    display: flex;
-    list-style: none;
-    border-bottom: none;
-    margin-bottom: 60px;
-    justify-content: center;
-    margin: 0px;
-    padding: 0px;
-    flex-wrap: wrap;
-    align-items: center;
-    color: #7c7770;
+  display: flex;
+  list-style: none;
+  border-bottom: none;
+  margin-bottom: 20px;
+  justify-content: center;
+  /* margin: 0px; */
+  padding: 0px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #7c7770;
 }
 
 li {
-    border-bottom: 4px solid #eaeaea;
-    list-style: none;
-    display: inline-block;
+  border-bottom: 4px solid #eaeaea;
+  list-style: none;
+  display: inline-block;
 }
 
 button {
-    border: none;
-    font-size: 15px;
-    color: #8b887d;
-    height: 50px;
-    text-align: center;
-    padding: 9px;
-    background-color: var(--bgcolor);
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
+  border: none;
+  font-size: 15px;
+  color: #8b887d;
+  height: 50px;
+  text-align: center;
+  padding: 9px;
+  background-color: var(--bgcolor);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 button:hover,
 .active {
-    background-color: rgb(56, 55, 55);
-    color: white;
+  background-color: rgb(56, 55, 55);
+  color: white;
 }
