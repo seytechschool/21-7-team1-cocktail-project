@@ -1,6 +1,6 @@
 # _21-7-team1 Cocktail Project_
 
-## Live Demo: <https://seytechschool.github.io/21-7-team1-coctail-project/>
+## Live Demo: <https://seytechschool.github.io/21-7-team1-cocktail-project/>
 
 | Name | Link |
 | ------ | ------ |
